@@ -18,3 +18,11 @@ minikube service kotlin-app
 minikube kubectl port-forward service/kotlin-app 8080:8080
 curl localhost:8080/echo
 ```
+
+## Fluentd
+
+docker-compose.yamlが事前に存在するので`kompose`を使ってk8sの設定を作成する
+
+### REF
+
+- https://speakerdeck.com/allegrogiken/docker-compose-kara-k8s-niru-men-sitemiru
