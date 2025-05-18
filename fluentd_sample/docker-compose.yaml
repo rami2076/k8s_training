@@ -1,0 +1,22 @@
+version: '3'
+services:
+  nginx:
+    image: nginx:latest
+    platform: linux/amd64
+    ports:
+      - 80:80
+    logging:
+      driver: "fluentd"
+      options:
+        fluentd-address: localhost:24224
+        tag: "docker.{{.Name}}"
+    depends_on:
+      - fluentd
+  fluentd:
+    image: fluent/fluentd:v1.15.3-1.0
+    platform: linux/amd64
+    volumes:
+      - ./config:/fluentd/etc
+    ports:
+      - 24224:24224
+      - 24224:24224/udp
