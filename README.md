@@ -23,3 +23,11 @@ ReStructuredText
     - https://zenn.dev/y_mrok/books/sphinx-no-tsukaikata/viewer/chapter18
 - 理由
     - 複雑な票を作成できるから
+
+# 使用するTool2
+
+https://qiita.com/shtnkgm/items/2aa204f2b52f24d02ff3
+
+```bash
+brew install watch
+```
