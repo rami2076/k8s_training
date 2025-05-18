@@ -41,3 +41,7 @@ fluentd The requested image's platform (linux/amd64) does not match the detected
 
 - https://zenn.dev/okita_kamegoro/scraps/329e8d4c2252c4
 - docker compose -d --platform linux/amd64
+
+## WARN k8s_training/fluentd_sample/docker-compose.yaml: the attribute `version` is obsolete, it will be ignored, please remove it to avoid potential confusion 
+
+https://zenn.dev/miroha/articles/whats-docker-compose-v2
