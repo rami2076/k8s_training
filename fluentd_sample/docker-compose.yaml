@@ -9,7 +9,7 @@ services:
       driver: "fluentd"
       options:
         fluentd-address: "localhost:24224"
-        tag: "docker.logging_driver.masashi.sada"
+        tag: "docker.{{.Name}}"
     depends_on:
       - fluentd
   fluentd:
