@@ -33,6 +33,8 @@ fluentd The requested image's platform (linux/amd64) does not match the detected
     - まだ以下のエラーが出る
       -
       `Error response from daemon: failed to create task for container: failed to initialize logging driver: dial tcp [::1]:24224: i/o timeout`
+        - https://qiita.com/moaikids/items/8a8ee90e163f14e6e923
+        - 設定を変更して対応 git のコミットを参照してください
 
 #### その他の対応
 
