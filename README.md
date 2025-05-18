@@ -41,4 +41,14 @@ unzip kt_sample.zip
 rm kt_sample.zip
 ```
 
-## 
+# Workaround
+
+## Code insight unavailable related Gradle project not linked
+
+https://stackoverflow.com/questions/77954295/gradle-kotlin-dsl-files-separate-config-files/77954564#77954564
+
+- Add build.gradle.kt to Setting
+- `./gradlew build`
+- Restart.
+- Finish.
+- Fun to project.
