@@ -1,6 +1,11 @@
 # k8s sample
 
 # commands
+
+## Kotlin App
+
+https://www.baeldung.com/kotlin/docker-kubernetes-deploy-app
+
 ```bash
 # deployment
 kubectl apply -f kt_sample/deployment.yaml
