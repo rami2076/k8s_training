@@ -26,3 +26,10 @@ docker-compose.yamlが事前に存在するので`kompose`を使ってk8sの設�
 ### REF
 
 - https://speakerdeck.com/allegrogiken/docker-compose-kara-k8s-niru-men-sitemiru
+
+## commands
+
+```bash
+# convert from compose.yaml to k8s config files.
+kompose convert -f fluentd_sample/docker-compose.yaml -o k8s_sample/fluentd_sample
+```

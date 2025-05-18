@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f fluentd_sample/docker-compose.yaml -o k8s_sample/fluentd_sample
+    kompose.version: 1.36.0 (HEAD)
+  labels:
+    io.kompose.service: fluentd
+  name: fluentd
+spec:
+  ports:
+    - name: "24224"
+      port: 24224
+      targetPort: 24224
+    - name: 24224-udp
+      port: 24224
+      protocol: UDP
+      targetPort: 24224
+  selector:
+    io.kompose.service: fluentd

@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    kompose.cmd: kompose convert -f fluentd_sample/docker-compose.yaml -o k8s_sample/fluentd_sample
+    kompose.version: 1.36.0 (HEAD)
+  labels:
+    io.kompose.service: fluentd
+  name: fluentd
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      io.kompose.service: fluentd
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      annotations:
+        kompose.cmd: kompose convert -f fluentd_sample/docker-compose.yaml -o k8s_sample/fluentd_sample
+        kompose.version: 1.36.0 (HEAD)
+      labels:
+        io.kompose.service: fluentd
+    spec:
+      containers:
+        - image: fluent/fluentd:v1.15.3-1.0
+          name: fluentd
+          ports:
+            - containerPort: 24224
+              protocol: TCP
+            - containerPort: 24224
+              protocol: UDP
+          volumeMounts:
+            - mountPath: /fluentd/etc
+              name: fluentd-cm0
+      restartPolicy: Always
+      volumes:
+        - configMap:
+            name: fluentd-cm0
+          name: fluentd-cm0
