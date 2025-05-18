@@ -33,3 +33,19 @@ docker-compose.yamlが事前に存在するので`kompose`を使ってk8sの設�
 # convert from compose.yaml to k8s config files.
 kompose convert -f fluentd_sample/docker-compose.yaml -o k8s_sample/fluentd_sample
 ```
+
+```bash
+# deployment
+kubectl apply -f fluentd_sample/deployment.yaml
+# confirm
+kubectl get pods -l app=fluentd-proxy
+watch kubectl get pods -l app=fluentd-proxy
+minikube kubectl get pods|less +F 
+watch kubectl get pods
+kubectl apply -f fluentd_sample/service.yaml
+minikube service fluentd-proxy-service
+curl localhost:8080/echo
+```
+
+kubectl describe pod fluentd-proxy-deployment-5zczj
+kubectl delete pod fluentd-proxy-deployment-5zczj
