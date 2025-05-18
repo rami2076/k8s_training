@@ -9,6 +9,7 @@ https://qiita.com/bosq/items/85c2543752425eb3df9d
 ```bash
 docker compose up -d
 docker compose logs -f
+curl localhost:80
 ```
 
 # workaround
