@@ -11,7 +11,7 @@ class OfficialEchoController {
 
     companion object {
         private const val PORT = 24224
-        private const val HOST = "localhost"
+        private const val HOST = "fluentd-proxy-service"
         private val logger: FluentLogger = FluentLogger.getLogger("app.test", HOST, PORT)
     }
 
@@ -24,6 +24,6 @@ class OfficialEchoController {
         )
         val result = logger.log("official", data)
 
-        return "Hello World $result"
+        return "Hello World!! $result"
     }
 }

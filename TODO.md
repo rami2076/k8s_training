@@ -1,2 +1,4 @@
 - [ ] java側にcurlしてfluentdにログが流れるかの動作確認
-- [ ] java側のhostをfluentdに設定したhostに変更する
+- [x] java側のhostをfluentdに設定したhostに変更する
+    - HOSTまで合わせられたはずだがなぜかログがfluentd側に流れない
+    - 要調査
