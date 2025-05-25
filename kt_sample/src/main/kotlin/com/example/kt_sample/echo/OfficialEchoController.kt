@@ -18,11 +18,10 @@ class OfficialEchoController {
     @GetMapping("/echo-official")
     fun echo(): String {
 
-        @Suppress("UNCHECKED_CAST")
-        val data: Map<String, Any> = {
-            "message" to "Hello World"
+        val data: Map<String, Any> = mapOf(
+            "message" to "Hello World",
             "from" to "kt_sample"
-        } as Map<String, Any>
+        )
         val result = logger.log("official", data)
 
         return "Hello World $result"
