@@ -1,0 +1,2 @@
+- [ ] java側にcurlしてfluentdにログが流れるかの動作確認
+- [ ] java側のhostをfluentdに設定したhostに変更する

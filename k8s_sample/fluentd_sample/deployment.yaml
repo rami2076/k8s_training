@@ -12,20 +12,12 @@ spec:
         app: fluentd-proxy
     spec:
       containers:
-        - name: nginx
-          image: nginx:latest
-          ports:
-            - containerPort: 80
-          env:
-            - name: FLUENTD_HOST
-              value: "localhost"
         - name: fluentd
           image: fluent/fluentd:v1.15.3-1.0
           ports:
             - containerPort: 24224
               protocol: TCP
-            - containerPort: 24224
-              protocol: UDP
+              name: kt-fluentd-1
           volumeMounts:
             - name: config-volume
               mountPath: /fluentd/etc
@@ -33,4 +25,3 @@ spec:
         - name: config-volume
           hostPath:
             path: config
-#            type: Directory

@@ -6,6 +6,8 @@
 
 https://www.baeldung.com/kotlin/docker-kubernetes-deploy-app
 
+### デプロイ
+
 ```bash
 # deployment
 kubectl apply -f kt_sample/deployment.yaml
@@ -17,6 +19,22 @@ kubectl apply -f kt_sample/service.yaml
 minikube service kotlin-app
 minikube kubectl port-forward service/kotlin-app 8080:8080
 curl localhost:8080/echo
+```
+
+### 再デプロイ
+
+```bash
+# 再デプロイ deployment
+deployment_name=kotlin-app-deployment
+kubectl rollout restart deployment ${deployment_name}
+# confirm
+kubectl get pods -l app=kotlin-app
+minikube kubectl get pods|less +F 
+watch kubectl get pods
+kubectl apply -f kt_sample/service.yaml
+minikube service kotlin-app
+minikube kubectl port-forward service/kotlin-app 8080:8080
+curl localhost:30000/echo
 ```
 
 ## Fluentd

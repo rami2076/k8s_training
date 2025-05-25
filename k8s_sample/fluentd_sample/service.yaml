@@ -3,10 +3,11 @@ kind: Service
 metadata:
   name: fluentd-proxy-service
 spec:
+  type: ClusterIP
   selector:
     app: fluentd-proxy
   ports:
     - protocol: TCP
-      port: 80
-      targetPort: 80
-  type: ClusterIP
+      port: 24224
+      targetPort: 24224
+      name: kt-fluentd-1
