@@ -67,3 +67,24 @@ curl localhost:8080/echo
 
 kubectl describe pod fluentd-proxy-deployment-5zczj
 kubectl delete pod fluentd-proxy-deployment-5zczj
+
+### 再デプロイ
+```bash
+deployment_name=fluentd-proxy-deployment
+kubectl rollout restart deployment ${deployment_name}
+# confirm
+kubectl get pods -l app=fluentd-proxy
+minikube kubectl get pods|less +F 
+watch kubectl get pods
+kubectl apply -f fluentd_sample/service.yaml
+minikube service fluentd-proxy-service
+```
+
+### 削除pod
+```bash
+kubectl delete pod fluentd-proxy-deployment-84hcs
+```
+### kotlin log 確認
+```bash
+kubectl logs -f fluentd-proxy-deployment-rzv4c -c kotlin-app-container
+```

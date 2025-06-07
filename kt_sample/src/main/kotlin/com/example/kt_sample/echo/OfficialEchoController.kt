@@ -1,6 +1,5 @@
 package com.example.kt_sample.echo
 
-import io.github.oshai.kotlinlogging.KotlinLogging.logger
 import org.fluentd.logger.FluentLogger
 import org.springframework.web.bind.annotation.GetMapping
 import org.springframework.web.bind.annotation.RestController
@@ -17,7 +16,6 @@ class OfficialEchoController {
 
     @GetMapping("/echo-official")
     fun echo(): String {
-
         val data: Map<String, Any> = mapOf(
             "message" to "Hello World",
             "from" to "kt_sample"

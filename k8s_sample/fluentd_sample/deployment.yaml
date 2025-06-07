@@ -13,15 +13,8 @@ spec:
     spec:
       containers:
         - name: fluentd
-          image: fluent/fluentd:v1.15.3-1.0
+          image: docker.io/sakusennx/fluentd-sample:latest
           ports:
             - containerPort: 24224
               protocol: TCP
               name: kt-fluentd-1
-          volumeMounts:
-            - name: config-volume
-              mountPath: /fluentd/etc
-      volumes:
-        - name: config-volume
-          hostPath:
-            path: config
